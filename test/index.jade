@@ -1,0 +1,19 @@
+doctype html
+head
+	title Smoothcal
+	link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,700&subset=cyrillic,latin')
+	link(rel="stylesheet", href="../src/css/cal.css")
+	link(rel="stylesheet", href="./css/main.css")
+	script(src="//code.jquery.com/jquery-1.11.2.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js")
+	script(src="../src/js/cal.js")
+	script(src="./js/main.js")
+body
+	h1.title Smoothcal
+	p.subtitle Smoothcal is a simple way to select date range. Requers jQuery and moment.js.
+	.js-select-date
+		input.date-starts(type="text", value="20-03-2015")
+		input.date-ends(type="text", value="09-04-2015")
+	a.btn(href="http://guhub.com/mourningking") Download on Github
+	p.copyright &copy; 
+		a(href="http://stephengusev.com") Stephen Gusev

@@ -1,0 +1,145 @@
+.cal {
+	position: relative;
+	width: 500px;
+	
+	.cal-controls {
+		display: flex;
+		justify-content: space-between;
+		position: absolute;
+		top: 0.6em;
+		width: 100%;
+		
+		.cal-scroll-left, .cal-scroll-right {
+			cursor: pointer;
+			display: block;
+			height: 16px;
+			opacity: 0.6;
+			padding: 0.2em 0.4em;
+			width: 10px;
+			
+			&:before {
+				background: url(../img/arrow.png);
+				content: '';
+				display: block;
+				height: 16px;
+				width: 10px;
+			}
+			
+			&:hover {
+				opacity: 1;	
+			}
+			
+			&.disabled {
+				cursor: default;
+			}
+		}
+		
+		.cal-scroll-left {
+			
+			&:before {
+				background-position: left bottom;
+			}
+			
+			&.disabled:before {
+				background-position: left top;	
+			}
+		}
+		
+		.cal-scroll-right {
+			
+			&:before {
+				background-position: right bottom;
+			}
+			
+			&.disabled:before {
+				background-position: right top;	
+			}
+		}
+	}
+	 
+	.cal-months {
+		overflow: hidden;
+	}
+	 
+	.cal-months-wrap {
+		transition: margin-left 0.3s ease-in-out; 
+		width: 9000px;
+	}
+
+	.cal-month {
+		float: left;
+		margin-right: 20px;
+		width: 240px;
+		
+		h4 {
+			font-size: 90%;
+			text-align: center;
+		}
+		
+		&.hover {
+			.cal-day {
+				background: darken(#e3f1ff, 3%);
+			}
+		}
+		
+		&.selected {
+			.cal-day {
+				background: #e3f1ff;
+			}
+		}
+	}
+	 
+	.cal-days {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.cal-week {
+		justify-content: space-between;
+		display: flex;
+		width: 100%;
+	}
+
+	.cal-month {
+		.cal-day {
+			cursor: pointer;
+			display: block;
+			padding-bottom: 0.2em;
+			padding-top: 0.18em;
+			text-align: center;
+			width: 100%;
+
+			&.cal-day-weekend {
+				color: darken(red, 10%);
+			}
+
+			&.cal-day-extend {
+				visibility: hidden;
+			}
+
+			&.selected {
+				background: #e3f1ff;
+			}
+
+			&.active {
+				background: #2c74dc;
+				color: white;
+			}
+
+			&:hover, &.hover {
+				background: darken(#e3f1ff, 3%);
+				color: black;
+			}
+
+			&.cal-day-disabled {
+				color: lighten(black, 80%);
+				cursor: default;
+
+				&:hover {
+					background: transparent;	
+				}
+			}
+
+		}
+	}
+}

@@ -1,0 +1,132 @@
+.cal {
+  position: relative;
+  width: 500px;
+}
+.cal .cal-controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 0.6em;
+  width: 100%;
+}
+.cal .cal-controls .cal-scroll-left,
+.cal .cal-controls .cal-scroll-right {
+  cursor: pointer;
+  display: block;
+  height: 16px;
+  opacity: 0.6;
+  padding: 0.2em 0.4em;
+  width: 10px;
+}
+.cal .cal-controls .cal-scroll-left:before,
+.cal .cal-controls .cal-scroll-right:before {
+  background: url(../img/arrow.png);
+  content: '';
+  display: block;
+  height: 16px;
+  width: 10px;
+}
+.cal .cal-controls .cal-scroll-left:hover,
+.cal .cal-controls .cal-scroll-right:hover {
+  opacity: 1;
+}
+.cal .cal-controls .cal-scroll-left.disabled,
+.cal .cal-controls .cal-scroll-right.disabled {
+  cursor: default;
+}
+.cal .cal-controls .cal-scroll-left:before {
+  background-position: left bottom;
+}
+.cal .cal-controls .cal-scroll-left.disabled:before {
+  background-position: left top;
+}
+.cal .cal-controls .cal-scroll-right:before {
+  background-position: right bottom;
+}
+.cal .cal-controls .cal-scroll-right.disabled:before {
+  background-position: right top;
+}
+.cal .cal-months {
+  overflow: hidden;
+}
+.cal .cal-months-wrap {
+  -webkit-transition: margin-left 0.3s ease-in-out;
+          transition: margin-left 0.3s ease-in-out;
+  width: 9000px;
+}
+.cal .cal-month {
+  float: left;
+  margin-right: 20px;
+  width: 240px;
+}
+.cal .cal-month h4 {
+  font-size: 90%;
+  text-align: center;
+}
+.cal .cal-month.hover .cal-day {
+  background: #d4e9ff;
+}
+.cal .cal-month.selected .cal-day {
+  background: #e3f1ff;
+}
+.cal .cal-days {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.cal .cal-week {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+.cal .cal-month .cal-day {
+  cursor: pointer;
+  display: block;
+  padding-bottom: 0.2em;
+  padding-top: 0.18em;
+  text-align: center;
+  width: 100%;
+}
+.cal .cal-month .cal-day.cal-day-weekend {
+  color: #cc0000;
+}
+.cal .cal-month .cal-day.cal-day-extend {
+  visibility: hidden;
+}
+.cal .cal-month .cal-day.selected {
+  background: #e3f1ff;
+}
+.cal .cal-month .cal-day.active {
+  background: #2c74dc;
+  color: white;
+}
+.cal .cal-month .cal-day:hover,
+.cal .cal-month .cal-day.hover {
+  background: #d4e9ff;
+  color: black;
+}
+.cal .cal-month .cal-day.cal-day-disabled {
+  color: #cccccc;
+  cursor: default;
+}
+.cal .cal-month .cal-day.cal-day-disabled:hover {
+  background: transparent;
+}
